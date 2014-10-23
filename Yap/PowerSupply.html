@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Power Supply</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="powersupply" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="ps1">Thermaltake Litepower 500W Black Edition Power Supply</option>
+					<option value="ps2">Silverstone Strider Essentials SLI 80P+ 500W Power Supply</option>
+					<option value="ps3">Seasonic S12II-520 520W 80+BRONZE Power Supply</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('powersupply');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "ps1"){
+					document.write("<b>Name: </b>" + powersupply1.name + "</br></br>");
+					document.write("<b>Model: </b>" + powersupply1.model + "</br></br>");
+					document.write("<b>Type: </b>" + powersupply1.type + "</br></br>");
+					document.write("<b>Max Power: </b>" + powersupply1.maxpower + "</br></br>");
+					document.write("<b>Modular: </b>" + powersupply1.modular + "</br></br>");
+					document.write("<b>Efficiency: </b>" + powersupply1.efficiency + "</br></br>");
+					document.write("<b>Connectors: </b></br>" + powersupply1.connectors + "</br></br>");
+					document.write("<b>Features: </b></br>" + powersupply1.features + "</br></br>");
+					document.write("<b>Price: </b>P" + powersupply1.price + "</br></br>");
+				}
+				
+				else if(sItem === "ps2"){
+					document.write("<b>Name: </b>" + powersupply2.name + "</br></br>");
+					document.write("<b>Model: </b>" + powersupply2.model + "</br></br>");
+					document.write("<b>Type: </b>" + powersupply2.type + "</br></br>");
+					document.write("<b>Max Power: </b>" + powersupply2.maxpower + "</br></br>");
+					document.write("<b>Modular: </b>" + powersupply2.modular + "</br></br>");
+					document.write("<b>Efficiency: </b>" + powersupply2.efficiency + "</br></br>");
+					document.write("<b>Connectors: </b></br>" + powersupply2.connectors + "</br></br>");
+					document.write("<b>Features: </b></br>" + powersupply2.features + "</br></br>");
+					document.write("<b>Price: </b>P" + powersupply2.price + "</br></br>");
+				}
+				
+				else if(sItem === "ps3"){
+					document.write("<b>Name: </b>" + powersupply3.name + "</br></br>");
+					document.write("<b>Model: </b>" + powersupply3.model + "</br></br>");
+					document.write("<b>Type: </b>" + powersupply3.type + "</br></br>");
+					document.write("<b>Max Power: </b>" + powersupply3.maxpower + "</br></br>");
+					document.write("<b>Modular: </b>" + powersupply3.modular + "</br></br>");
+					document.write("<b>Efficiency: </b>" + powersupply3.efficiency + "</br></br>");
+					document.write("<b>Connectors: </b></br>" + powersupply3.connectors + "</br></br>");
+					document.write("<b>Features: </b></br>" + powersupply3.features + "</br></br>");
+					document.write("<b>Price: </b>P" + powersupply3.price + "</br></br>");
+				}
+			}
+		</script>
+	</body>
+</html>

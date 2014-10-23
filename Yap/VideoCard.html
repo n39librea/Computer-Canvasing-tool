@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Video Card</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="videocard" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="vc1">Palit GTX 750 1GB DDR5 128bit OC STORMX Graphics Card</option>
+					<option value="vc2">Powercolor HD7850 1GB GDDR5 256bit</option>
+					<option value="vc3">MSI GTX760 Twin FROZR IV OC 2GB DDR5 256bit</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('videocard');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "vc1"){
+					document.write("<b>Name: </b>" + videoCard1.name + "</br>");
+					document.write("<b>GPU: </b>" + videoCard1.gpu + "</br>");
+					document.write("<b>Type: </b>" + videoCard1.type + "</br>");
+					document.write("<b>Clock Speed: </b>" + videoCard1.clockspd + "</br>");
+					document.write("<b>Memory: </b>" + videoCard1.memory + "</br>");
+					document.write("<b>Bus: </b>" + videoCard1.bus + "</br>");
+					document.write("<b>Price: </b>P" + videoCard1.price + "</br>");
+				}
+				
+				else if(sItem === "vc2"){
+					document.write("<b>Name: </b>" + videoCard2.name + "</br>");
+					document.write("<b>GPU: </b>" + videoCard2.gpu + "</br>");
+					document.write("<b>Type: </b>" + videoCard2.type + "</br>");
+					document.write("<b>Clock Speed: </b>" + videoCard2.clockspd + "</br>");
+					document.write("<b>Memory: </b>" + videoCard2.memory + "</br>");
+					document.write("<b>Bus: </b>" + videoCard2.bus + "</br>");
+					document.write("<b>Price: </b>P" + videoCard2.price + "</br>");
+				}
+				
+				else if(sItem === "vc3"){
+					document.write("<b>Name: </b>" + videoCard2.name + "</br>");
+					document.write("<b>GPU: </b>" + videoCard2.gpu + "</br>");
+					document.write("<b>Type: </b>" + videoCard2.type + "</br>");
+					document.write("<b>Clock Speed: </b>" + videoCard2.clockspd + "</br>");
+					document.write("<b>Memory: </b>" + videoCard2.memory + "</br>");
+					document.write("<b>Bus: </b>" + videoCard2.bus + "</br>");
+					document.write("<b>Price: </b>P" + videoCard2.price + "</br>");
+				}
+			}
+		</script>
+	</body>
+</html>

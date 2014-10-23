@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Hard Drive</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="harddrive" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="hd1">Seagate 500Gb 7200RPM 3.5 SATA</option>
+					<option value="hd2">Western Digital 1Tb BLUE 3.5 SATA</option>
+					<option value="hd3">Seagate 2Tb 7200RPM 3.5 SATA</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('harddrive');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "hd1"){
+					document.write("<b>Name: </b>" + hardDrive1.name + "</br>");
+					document.write("<b>Model: </b>" + hardDrive1.model + "</br>");
+					document.write("<b>Size: </b>" + hardDrive1.size + "</br>");
+					document.write("<b>Type: </b>" + hardDrive1.type + "</br>");
+					document.write("<b>Price: </b>P" + hardDrive1.price + "</br>");
+				}
+				
+				else if(sItem === "hd2"){
+					document.write("<b>Name: </b>" + hardDrive2.name + "</br>");
+					document.write("<b>Model: </b>" + hardDrive2.model + "</br>");
+					document.write("<b>Size: </b>" + hardDrive2.size + "</br>");
+					document.write("<b>Type: </b>" + hardDrive2.type + "</br>");
+					document.write("<b>Price: </b>P" + hardDrive2.price + "</br>");
+				}
+				
+				else if(sItem === "hd3"){
+					document.write("<b>Name: </b>" + hardDrive3.name + "</br>");
+					document.write("<b>Model: </b>" + hardDrive3.model + "</br>");
+					document.write("<b>Size: </b>" + hardDrive3.size + "</br>");
+					document.write("<b>Type: </b>" + hardDrive3.type + "</br>");
+					document.write("<b>Price: </b>P" + hardDrive3.price + "</br>");
+				}
+			}
+		</script>
+	</body>
+</html>

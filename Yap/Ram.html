@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ram</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="ram" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="r1">G.SKILL RIPJAWSX 8GB 1600MHz</option>
+					<option value="r2">Kingston HyperX BLU 8GB 1600MHZ</option>
+					<option value="r3">Corsair 4GB XMS3 DDR3 1600</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('ram');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "r1"){
+					document.write("<b>Name: </b>" + ram1.name + "</br>");
+					document.write("<b>Model: </b>" + ram1.model + "</br>");
+					document.write("<b>Type: </b>" + ram1.type + "</br>");
+					document.write("<b>Size: </b>" + ram1.size + "</br>");
+					document.write("<b>Frequency: </b>" + ram1.frequency + "</br>");
+					document.write("<b>Voltage: </b>" + ram1.voltage + "</br>");
+					document.write("<b>Price: </b>P" + ram1.price + "</br>");
+				}
+				
+				else if(sItem === "r2"){
+					document.write("<b>Name: </b>" + ram2.name + "</br>");
+					document.write("<b>Model: </b>" + ram2.model + "</br>");
+					document.write("<b>Type: </b>" + ram2.type + "</br>");
+					document.write("<b>Size: </b>" + ram2.size + "</br>");
+					document.write("<b>Frequency: </b>" + ram2.frequency + "</br>");
+					document.write("<b>Voltage: </b>" + ram2.voltage + "</br>");
+					document.write("<b>Price: </b>P" + ram2.price + "</br>");
+				}
+				
+				else if(sItem === "r3"){
+					document.write("<b>Name: </b>" + ram3.name + "</br>");
+					document.write("<b>Model: </b>" + ram3.model + "</br>");
+					document.write("<b>Type: </b>" + ram3.type + "</br>");
+					document.write("<b>Size: </b>" + ram3.size + "</br>");
+					document.write("<b>Frequency: </b>" + ram3.frequency + "</br>");
+					document.write("<b>Voltage: </b>" + ram3.voltage + "</br>");
+					document.write("<b>Price: </b>P" + ram3.price + "</br>");
+				}
+			}
+		</script>
+	</body>
+</html>

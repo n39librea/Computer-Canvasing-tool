@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Mouse</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="mouse" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="mo1">A4Tech N-320 Padless USB Gray Mouse</option>
+					<option value="mo2">Logitech B100 USB BLK Mouse</option>
+					<option value="mo3">Genius Netscroll 120 Optical PS2 Black Mouse</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('mouse');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "mo1"){
+					document.write("<b>Name: </b>" + mouse1.name + "</br></br>");
+					document.write("<b>Interface: </b>" + mouse1.type + "</br></br>");
+					document.write("<b>Number of Buttons : </b>" + mouse1.type + "</br></br>");
+					document.write("<b>Wireless : </b>" + mouse1.wireless + "</br></br>");
+					document.write("<b>Scroll Wheel : </b>" + mouse1.scrollwheel + "</br></br>");
+					document.write("<b>Orientation : </b>" + mouse1.orientation + "</br></br>");
+					document.write("<b>Sensor: </b>" + mouse1.sensor + "</br></br>");
+					document.write("<b>Price: </b>P" + mouse1.price + "</br></br>");
+				}
+				
+				else if(sItem === "mo2"){
+					document.write("<b>Name: </b>" + mouse2.name + "</br></br>");
+					document.write("<b>Interface: </b>" + mouse2.type + "</br></br>");
+					document.write("<b>Number of Buttons : </b>" + mouse2.type + "</br></br>");
+					document.write("<b>Wireless : </b>" + mouse2.wireless + "</br></br>");
+					document.write("<b>Scroll Wheel : </b>" + mouse2.scrollwheel + "</br></br>");
+					document.write("<b>Orientation : </b>" + mouse2.orientation + "</br></br>");
+					document.write("<b>Sensor: </b>" + mouse2.sensor + "</br></br>");
+					document.write("<b>Price: </b>P" + mouse2.price + "</br></br>")
+				}
+				
+				else if(sItem === "mo3"){
+					document.write("<b>Name: </b>" + mouse3.name + "</br></br>");
+					document.write("<b>Interface: </b>" + mouse3.type + "</br></br>");
+					document.write("<b>Number of Buttons : </b>" + mouse3.type + "</br></br>");
+					document.write("<b>Wireless : </b>" + mouse3.wireless + "</br></br>");
+					document.write("<b>Scroll Wheel : </b>" + mouse3.scrollwheel + "</br></br>");
+					document.write("<b>Orientation : </b>" + mouse3.orientation + "</br></br>");
+					document.write("<b>Sensor: </b>" + mouse3.sensor + "</br></br>");
+					document.write("<b>Price: </b>P" + mouse3.price + "</br></br>")
+				}
+			}
+		</script>
+	</body>
+</html>

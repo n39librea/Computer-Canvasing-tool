@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Monitor</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="monitor" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="m1">ViewSonic 16&quot; LED VA1601W BLK Monitor</option>
+					<option value="m2">Samsung 20&quot; S20B300 LED BLK Monitor</option>
+					<option value="m3">BenQ 19.5&quot; BQ GL2023A Widescreen LED Monitor</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('monitor');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "m1"){
+					document.write("<b>Name: </b>" + monitor1.name + "</br></br>");
+					document.write("<b>Screen Size: </b>" + monitor1.size + "</br></br>");
+					document.write("<b>Resolution: </b>" + monitor1.resolution + "</br></br>");
+					document.write("<b>Contrast Ratio: </b>" + monitor1.contrastratio + "</br></br>");
+					document.write("<b>Brightness: </b>" + monitor1.brightness + "</br></br>");
+					document.write("<b>Voltage: </b>" + monitor1.voltage + "</br></br>");
+					document.write("<b>Dimension HxWxD: </b>" + monitor1.dimension + "</br></br>");
+					document.write("<b>Price: </b>P" + monitor1.price + "</br></br>");
+				}
+				
+				else if(sItem === "m2"){
+					document.write("<b>Name: </b>" + monitor2.name + "</br></br>");
+					document.write("<b>Screen Size: </b>" + monitor2.size + "</br></br>");
+					document.write("<b>Resolution: </b>" + monitor2.resolution + "</br></br>");
+					document.write("<b>Contrast Ratio: </b>" + monitor2.contrastratio + "</br></br>");
+					document.write("<b>Brightness: </b>" + monitor2.brightness + "</br></br>");
+					document.write("<b>Voltage: </b>" + monitor2.voltage + "</br></br>");
+					document.write("<b>Dimension HxWxD: </b>" + monitor2.dimension + "</br></br>");
+					document.write("<b>Price: </b>P" + monitor2.price + "</br></br>");
+				}
+				
+				else if(sItem === "m3"){
+					document.write("<b>Name: </b>" + monitor3.name + "</br></br>");
+					document.write("<b>Screen Size: </b>" + monitor3.size + "</br></br>");
+					document.write("<b>Resolution: </b>" + monitor3.resolution + "</br></br>");
+					document.write("<b>Contrast Ratio: </b>" + monitor3.contrastratio + "</br></br>");
+					document.write("<b>Brightness: </b>" + monitor3.brightness + "</br></br>");
+					document.write("<b>Voltage: </b>" + monitor3.voltage + "</br></br>");
+					document.write("<b>Dimension HxWxD: </b>" + monitor3.dimension + "</br></br>");
+					document.write("<b>Price: </b>P" + monitor3.price + "</br></br>");
+				}
+			}
+		</script>
+	</body>
+</html>

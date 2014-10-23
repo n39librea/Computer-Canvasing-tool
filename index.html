@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<style>
+	
+			#header {
+				background-color:black;
+				color:white;
+				text-align:center;
+				padding:5px;
+			}
+			#nav {
+				line-height:30px;
+				background-color:#eeeeee;
+				height:500px;
+				width:350px;
+				float:left;
+				padding:5px;	      
+			}
+			#nav.Bot {
+				line-height:30px;
+				background-color:#eeeeee;
+				height:50px;
+				width:320px;
+				left:-350px;
+			
+				top: 400px;
+				padding:5px;
+				position:relative;
+			}
+			#totalPrice.price {
+				font-size:30px;
+				font-color:red;
+			}
+			#section {
+				background-color:black;
+				width:400px;
+				padding:10px;	
+				position:absolute;
+				left:430px;
+				top:100px;
+				
+			}
+			.imgsz{
+				width:400px;
+				height:400px;
+			}
+			#footer {
+				background-color:black;
+				color:white;
+				clear:both;
+				text-align:center;
+				padding:5px;	 	 
+			}
+			#switch
+			{
+				background-color:#ffffff;
+				top:50px;
+				position: absolute;
+				left:200px;
+			}
+			#right {
+				line-height:30px;
+				background-color:#eeeeee;
+				height:500px;
+				width:300px;
+				float:right;
+				padding:5px;
+			}
+			#right.Bot {
+				line-height:30px;
+				background-color:#eeeeee;
+				height:50px;
+				width:280px;
+				right:10px;
+			
+				top: 500px;
+				padding:5px;
+				position:absolute;
+			}
+			.center {
+				margin-left: auto;
+				margin-right: auto;
+				width: 70%;
+				
+			}
+			.circles{
+				padding: 5px;
+				width:10px;
+				
+			}
+			div.img img {
+				display: inline;
+				margin: 5px;
+				border: 1px solid #ffffff;
+			}
+			div.img a:hover img {
+				border: 1px solid #0000ff;
+			}
+			.wrapper:hover #slide {
+				transition: 2s;
+				left: 1;
+			}
+			
+			font{
+				font-family: tahoma
+			}
+
+		</style>
+	</head>
+
+	<body><script>
+			var fromPrevious=0;
+			var page=1;
+			var processorIsDone;
+			var hardDiskIsDone;
+			var videoCardIsDone;
+			var powerSupplyIsDone;
+			var ctr=0;
+			
+			var processorIsActive=1;
+			var hardDiskIsActive=0;
+			var videoCardIsActive=0;
+			var powerSupplyIsActive=0;</script>
+			<div id="switch">
+			<script>
+			
+			</script>
+		</div>
+
+		<div id="header">
+			<h1>Computer Canvasing Tool</h1>	
+		</div>
+
+		<div id="nav">
+			
+			
+			<script src="motherboardSlide.js" type="text/javascript">
+				console.log("motherboardslide");
+				var clrTime;
+				var temp=1;
+				processorBgChange();
+				
+			</script>
+			<script type="text/javascript">
+
+				function nextPage()
+				{
+					//console.log(page)
+					fromPrevious=0
+					//console.log(page);
+					page++;
+					
+					if(page==1){
+						if(processorIsDone==1)
+							nextPage()
+						else	
+							processorList();
+					}else if(page==2){
+						if(hardDiskIsDone==1)
+							nextPage()
+						else
+							hardDiskList();
+					}else if(page==3){
+						if(videoCardIsDone==1)
+							nextPage()
+						else
+							videoCardList();
+					}else if(page==4){
+						if(powerSupplyIsDone==1)
+							nextPage()
+						else
+							powerSupplyList();	
+					}else{
+						if(processorIsDone==0)
+							processorList();
+						else if(hardDiskIsDone==0)
+							hardDiskList();
+						else if(videoCardIsDone==0)
+							videoCardList();
+						else if(videoCardIsDone==0)
+							powerSupplyList();	
+						/*else{	
+					else 
+					{
+						document.getElementById("addButton").disabled=true;
+								document.getElementById("backButton").disabled=true;
+								document.getElementById("samp").innerHTML=""
+								document.getElementById('indexSelect').disabled=true;
+								document.getElementById('p1').innerHTML="";
+								document.getElementById('p2').innerHTML="";
+								document.getElementById('p3').innerHTML="";
+					}
+					}
+							if(processorIsDone==1 || hardDiskIsDone==1 || videoCardIsDone==1||powerSupplyIsDone==1)
+							{
+								document.getElementById("addButton").disabled=true;
+								document.getElementById("backButton").disabled=true;
+								document.getElementById("samp").innerHTML=""
+								document.getElementById('indexSelect').disabled=true;
+								document.getElementById('p1').innerHTML="";
+								document.getElementById('p2').innerHTML="";
+								document.getElementById('p3').innerHTML="";
+							}
+						}*/
+					}
+				}
+				function previousPage()
+				{
+					fromPrevious=1;
+					page--;
+					//console.log(page)
+					if(page==1){
+						if(processorIsDone==1)
+							previousPage()
+						else	
+							processorList();
+					}else if(page==2){
+						if(hardDiskIsDone==1)
+							previousPage()
+						else
+							hardDiskList();
+					}else if(page==3){
+						if(videoCardIsDone==1)
+							previousPage()
+						else
+							videoCardList();
+					}else if(page==4){
+						if(powerSupplyIsDone==1)
+							previousPage();
+						else
+							powerSupplyList();		
+					}
+				}
+				
+				
+				document.write("<p id='componentName' onclick='processorBgChange()' >Processor</p> ");
+				document.write("<select id='indexSelect' onChange='Select()'>");
+				document.write("<option>Select an option...</option>");
+				document.write("<option id='p1'>Intel Core i7-4770K Processor</option>");
+				document.write("<option id='p2'>Intel Core i5-4670K Processor</option>");
+				document.write("<option id='p3'>Intel Core i3-4130 Processor</option>");
+				document.write("</select>");
+					
+				
+				function processorList() {
+					//processorBgChange();
+					page=1;
+					processorIsActive=1;
+					hardDiskIsActive=0;
+					videoCardIsActive=0;
+					powerSupplyIsActive=0;
+					processorBgChange();
+					document.getElementById("samp").innerHTML="";
+					document.getElementById("backButton").disabled=true;
+					document.getElementById("addButton").disabled=true;
+					document.getElementById('indexSelect').disabled=false;
+					document.getElementById("indexSelect").selectedIndex = "-1";
+					document.getElementById('componentName').innerHTML="Processor";
+					//if(fromPrevious==1){
+					//	document.getElementById('hd1').id='p1';
+					//	document.getElementById('hd2').id='p2';
+					//	document.getElementById('hd3').id='p3';
+					//}
+					document.getElementById('p1').innerHTML="Intel Core i7-4770K Processor";
+					document.getElementById('p2').innerHTML="Intel Core i5-4670K Processor";
+					document.getElementById('p3').innerHTML="Intel Core i3-4130 Processor";
+					//document.getElementById("switch").innerHTML="<img id='circle1' class='circles' src='images/EnableCircle.png' onclick='next(0)'>" + "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(1)'>" + "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(2)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(3)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(4)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(5)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(6)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(7)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(8)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(9)'>"+ "<img id='circle2' class='circles' src='images/DisableCircle.png' onclick='next(10)'>" ;
+					//console.log(document.getElementById('circle5').innerHTML);
+					if(processorIsDone==1)
+						document.getElementById("addButton").disabled=true;
+					//}
+					
+					
+				}
+				function hardDiskList() {
+					page=2;
+					//motherboardCircle();
+					//motherboardSlide();
+					//if(hardDiskIsActive==1);{
+					processorIsActive=0;
+					hardDiskIsActive=1;
+					videoCardIsActive=0;
+					powerSupplyIsActive=0;
+					harddiskBgChange()
+						document.getElementById("samp").innerHTML="";
+						document.getElementById("backButton").disabled=false;
+						document.getElementById("addButton").disabled=true;
+						document.getElementById('indexSelect').disabled=false;
+						document.getElementById("indexSelect").selectedIndex = "-1";
+						document.getElementById('componentName').innerHTML="HardDisk";
+						document.getElementById('p1').innerHTML="Seagate 500Gb 7200RPM 3.5 SATA";
+						document.getElementById('p2').innerHTML="Western Digital 1Tb BLUE 3.5 SATA";
+						document.getElementById('p3').innerHTML="Seagate 2Tb 7200RPM 3.5 SATA";	
+						if(hardDiskIsDone==1)
+						document.getElementById("addButton").disabled=true;
+					//}						
+				}
+				function videoCardList() {
+					page=3;
+					processorIsActive=0;
+					hardDiskIsActive=0;
+					videoCardIsActive=1;
+					powerSupplyIsActive=0;
+					videoCardBgChange();
+					document.getElementById("samp").innerHTML="";
+					document.getElementById("nextButton").disabled=false;
+					document.getElementById("addButton").disabled=true;
+					document.getElementById('indexSelect').disabled=false;
+					
+					document.getElementById("indexSelect").selectedIndex = "-1";
+					document.getElementById('componentName').innerHTML="Video Card";
+					document.getElementById('p1').innerHTML="Palit GTX 750 1GB DDR5 128bit OC STORMX";
+					document.getElementById('p2').innerHTML="Powercolor HD7850 1GB GDDR5 256bit";
+					document.getElementById('p3').innerHTML="MSI GTX760 Twin FROZR IV OC 2GB DDR5 256bit</option>";
+					if(videoCardIsDone==1)
+						document.getElementById("addButton").disabled=true;
+					
+				}
+				function powerSupplyList() {
+					page=4;
+					processorIsActive=0;
+					hardDiskIsActive=0;
+					videoCardIsActive=0;
+					powerSupplyIsActive=1;
+					powerSupplyBgChange();
+					document.getElementById("samp").innerHTML="";
+					
+					//.getElementById("addButton").disabled=false;
+					//document.getElementById("backButton").disabled=false;
+					document.getElementById('indexSelect').disabled=false;
+								
+					document.getElementById("nextButton").disabled=true;
+					document.getElementById("addButton").disabled=true;
+					document.getElementById("indexSelect").selectedIndex = "-1";
+					document.getElementById('componentName').innerHTML="Power Supply";
+					/*document.getElementById('vc1').id='ps1';
+					document.getElementById('vc2').id='ps2';
+					document.getElementById('vc3').id='ps3';*/
+					document.getElementById('p1').innerHTML="hermaltake Litepower 500W";
+					document.getElementById('p2').innerHTML="Silverstone Strider Essentials SLI 80P+ 500W";
+					document.getElementById('p3').innerHTML="Seasonic S12II-520 520W 80+BRONZE";
+					if(powerSupplyIsDone==1)
+						document.getElementById("addButton").disabled=true;
+					
+						
+				}
+			</script>	
+				<p id="samp"></p>
+				<script type="text/javascript" src="yap/HwSpecifications.js"></script>
+				<script type="text/javascript">
+				var totalPrice=0;
+				var getPrice;
+				var sItem;
+				var item;
+
+				
+				function Select(x){
+				//var hditem = document.getElementById('hardDiskSelect');
+				item = document.getElementById('indexSelect');
+				sItem = item.options[item.selectedIndex].id;//x.options[whichSelected].text;//item.options[item.selectedIndex].value;
+				
+				
+					
+					if(processorIsActive==1)
+					{
+						if(sItem === "p1"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML = "<p>Name: " + processor1.name + "</br> Model: " + processor1.model + "</br>No. of Core: " + processor1.core + "</br>No. of Thread: " + processor1.thread + "</br>lockspeed Rate: " + processor2.clockspd + "</br>Max. Frequency: " + processor1.maxfreq + "</br>Price: P" + processor1.price + "</br>";
+						}
+						
+						else if(sItem === "p2"){
+						document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML = "<p>Name: " + processor2.name + "</br> Model: " + processor2.model + "</br>No. of Core: " + processor2.core + "</br>No. of Thread: " + processor2.thread + "</br>lockspeed Rate: " + processor2.clockspd + "</br>Max. Frequency: " + processor2.maxfreq + "</br>Price: P" + processor2.price + "</br>";
+						}
+						
+						else if(sItem === "p3"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML = "<p>Name: " + processor3.name + "</br> Model: " + processor3.model + "</br>No. of Core: " + processor3.core + "</br>No. of Thread: " + processor3.thread + "</br>lockspeed Rate: " + processor3.clockspd + "</br>Max. Frequency: " + processor3.maxfreq + "</br>Price: P" + processor3.price + "</br>";
+						}
+					}
+					else if(hardDiskIsActive==1)
+					{
+						if(sItem === "p1"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + hardDrive1.name + "</br>Model: " + hardDrive1.model + "</br>Size: " + hardDrive1.size + "</br>Type: " + hardDrive1.type + "</br>Price: P" + hardDrive1.price + "</br>";
+						}
+						
+						else if(sItem === "p2"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + hardDrive2.name + "</br>Model: " + hardDrive2.model + "</br>Size: " + hardDrive2.size + "</br>Type: " + hardDrive2.type + "</br>Price: P" + hardDrive2.price + "</br>";
+						}
+						
+						else if(sItem === "p3"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + hardDrive3.name + "</br>Model: " + hardDrive3.model + "</br>Size: " + hardDrive3.size + "</br>Type: " + hardDrive3.type + "</br>Price: P" + hardDrive3.price + "</br>";
+						}
+					}
+					else if(videoCardIsActive==1)
+					{
+						if(sItem === "p1"){
+						document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + videoCard1.name + "</br>GPU: " + videoCard1.gpu + "</br>Type: " + videoCard1.type + "</br>Clock Speed: " + videoCard1.clockspd + "</br>Memory: " + videoCard1.memory + "</br>Bus: " + videoCard1.bus + "</br>Price: P" + videoCard1.price + "</br>";
+						}
+						
+						else if(sItem === "p2"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + videoCard2.name + "</br>GPU: " + videoCard2.gpu + "</br>Type: " + videoCard2.type + "</br>Clock Speed: " + videoCard2.clockspd + "</br>Memory: " + videoCard2.memory + "</br>Bus: " + videoCard2.bus + "</br>Price: P" + videoCard2.price + "</br>";
+						}
+						
+						else if(sItem === "p3"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="Name: " + videoCard3.name + "</br>GPU: " + videoCard3.gpu + "</br>Type: " + videoCard3.type + "</br>Clock Speed: " + videoCard3.clockspd + "</br>Memory: " + videoCard3.memory + "</br>Bus: " + videoCard3.bus + "</br>Price: P" + videoCard3.price + "</br>";
+						}
+					}
+					else if(powerSupplyIsActive==1)
+					{
+						if(sItem === "p1"){
+						document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="<b>Name: </b>" + powersupply1.name + "</br><b>Model: </b>" + powersupply1.model + "</br><b>Type: </b>" + powersupply1.type + "</br><b>Max Power: </b>" + powersupply1.maxpower + "</br><b>Price: </b>P" + powersupply1.price;
+						}
+						else if(sItem === "p2"){
+							document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="<b>Name: </b>" + powersupply2.name + "</br><b>Model: </b>" + powersupply2.model + "</br><b>Type: </b>" + powersupply2.type + "</br><b>Max Power: </b>" + powersupply2.maxpower + "</br><b>Price: </b>P" + powersupply2.price;
+						}
+						else if(sItem === "p3"){
+						document.getElementById("addButton").disabled=false;
+							document.getElementById("samp").innerHTML ="<b>Name: </b>" + powersupply3.name + "</br><b>Model: </b>" + powersupply3.model + "</br><b>Type: </b>" + powersupply3.type + "</br><b>Max Power: </b>" + powersupply3.maxpower + "</br><b>Price: </b>P" + powersupply3.price;
+						}
+					}
+				}
+				function addItem()
+				{	
+					var btn;
+					var t;
+					
+					console.log("page" + page);
+					if(processorIsActive==1)
+					{
+						if(sItem === "p1"){
+							totalPrice=totalPrice + parseInt(processor1.price);
+							document.getElementById("addedProcessor").innerHTML = processor1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + processor1.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							processorIsDone=1;
+							ctr++;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							document.getElementById("addedProcessor").appendChild(btn);
+							btn.align='right';
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(processor1.price);
+								document.getElementById("addedProcessor").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								ctr--;
+								processorIsDone=0;
+								
+								
+								processorList();
+							}
+							
+						}
+						else if(sItem === "p2"){
+							totalPrice=totalPrice + parseInt(processor2.price);
+							document.getElementById("addedProcessor").innerHTML = processor1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + processor2.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							processorIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							document.getElementById("addedProcessor").appendChild(btn);
+							btn.align='right';
+							ctr++;
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(processor2.price);
+								document.getElementById("addedProcessor").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								ctr--;
+								processorIsDone=0;
+								processorList();
+							}
+						}
+						else if(sItem === "p3"){
+							totalPrice=totalPrice + parseInt(processor3.price);
+							document.getElementById("addedProcessor").innerHTML = processor1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + processor3.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							processorIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							document.getElementById("addedProcessor").appendChild(btn);
+							btn.align='right';
+							ctr++;
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(processor3.price);
+								document.getElementById("addedProcessor").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								processorIsDone=0;
+								ctr--;
+								processorList();
+							}
+						}
+					}
+					else if(hardDiskIsActive==1)
+					{
+						if(sItem === "p1"){
+							totalPrice=totalPrice + parseInt(hardDrive1.price);
+							document.getElementById("addedHardDrive").innerHTML = hardDrive1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + hardDrive1.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							hardDiskIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							document.getElementById("addedHardDrive").appendChild(btn);
+							btn.align='right';
+							ctr++;
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(hardDrive1.price);
+								document.getElementById("addedHardDrive").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								hardDiskIsDone=0;
+								ctr--;
+								hardDiskList();
+							}
+						}					
+						else if(sItem === "p2"){
+							totalPrice=totalPrice + parseInt(hardDrive2.price);
+							document.getElementById("addedHardDrive").innerHTML = hardDrive2.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + hardDrive2.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							hardDiskIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedHardDrive").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(hardDrive2.price);
+								document.getElementById("addedHardDrive").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								hardDiskIsDone=0;
+								ctr--;
+								hardDiskList();
+							}
+						}
+						
+						else if(sItem === "p3"){
+							totalPrice=totalPrice + parseInt(hardDrive3.price);
+							document.getElementById("addedHardDrive").innerHTML = hardDrive3.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + hardDrive3.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							hardDiskIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedHardDrive").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(hardDrive3.price);
+								document.getElementById("addedHardDrive").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								hardDiskIsDone=0;
+								ctr--;
+								hardDiskList();
+							}
+						}
+					}
+					else if(videoCardIsActive==1)
+					{
+						if(sItem === "p1"){
+							totalPrice=totalPrice + parseInt(videoCard1.price);
+							document.getElementById("addedVideoCard").innerHTML = videoCard1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + videoCard1.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							videoCardIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedVideoCard").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(videoCard1.price);
+								document.getElementById("addedVideoCard").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								videoCardIsDone=0;
+								ctr--;
+								videoCardList();
+							}
+						}					
+						else if(sItem === "p2"){
+							totalPrice=totalPrice + parseInt(videoCard2.price);
+							document.getElementById("addedVideoCard").innerHTML = videoCard2.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + videoCard2.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							videoCardIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedVideoCard").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(videoCard2.price);
+								document.getElementById("addedVideoCard").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								videoCardIsDone=0;
+								ctr--;
+								videoCardList();
+							}
+						}					
+						else if(sItem === "p3"){
+							totalPrice=totalPrice + parseInt(videoCard3.price);
+							document.getElementById("addedVideoCard").innerHTML = videoCard3.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + videoCard3.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							videoCardIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedVideoCard").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(videoCard3.price);
+								document.getElementById("addedVideoCard").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								videoCardIsDone=0;
+								ctr--;
+								videoCardList();
+							}
+						}
+					}
+					else if(powerSupplyIsActive==1)
+					{
+						if(sItem === "p1"){
+							document.getElementById("addButton").disabled=true;
+							totalPrice=totalPrice + parseInt(powersupply1.price);
+							document.getElementById("addedPowerSupply").innerHTML = powersupply1.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + powersupply1.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							powerSupplyIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedPowerSupply").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(powersupply1.price);
+								document.getElementById("addedPowerSupply").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								powerSupplyIsDone=0;
+								ctr--;
+								powerSupplyList();
+							}
+						}
+						else if(sItem === "p2"){
+							document.getElementById("addButton").disabled=true;
+							totalPrice=totalPrice + parseInt(powersupply2.price);
+							document.getElementById("addedPowerSupply").innerHTML = powersupply2.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + powersupply2.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							powerSupplyIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedPowerSupply").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(powersupply2.price);
+								document.getElementById("addedPowerSupply").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								powerSupplyIsDone=0;
+								ctr--;
+								powerSupplyList();
+							}
+						}
+						else if(sItem === "p3"){
+							document.getElementById("addButton").disabled=true;
+							totalPrice=totalPrice + parseInt(powersupply3.price);
+							document.getElementById("addedPowerSupply").innerHTML = powersupply3.name+"<br/>&nbsp&nbsp&nbsp&nbsp&nbspPrice: P" + powersupply3.price + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+							powerSupplyIsDone=1;
+							btn = document.createElement("BUTTON");
+							t = document.createTextNode("Remove");
+							btn.appendChild(t);
+							ctr++;
+							document.getElementById("addedPowerSupply").appendChild(btn);
+							btn.onclick=function(){
+								totalPrice=totalPrice - parseInt(powersupply3.price);
+								document.getElementById("addedPowerSupply").innerHTML =" ";
+								document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+								powerSupplyIsDone=0;
+								ctr--;
+								powerSupplyList();
+							}
+						}
+					}
+					console.log(ctr);
+					if(ctr==4)
+					{
+						document.getElementById("addButton").disabled=true;
+						document.getElementById("backButton").disabled=true;
+						document.getElementById('indexSelect').disabled=true;
+						document.getElementById("samp").innerHTML=""
+						document.getElementById('p1').innerHTML="";
+						document.getElementById('p2').innerHTML="";
+						document.getElementById('p3').innerHTML="";
+						document.getElementById('componentName').innerHTML="";
+						
+					}
+					document.getElementById('totalPrice').innerHTML="Total Price: "+ totalPrice +".00";
+					nextPage();
+					
+					console.log(totalPrice);	
+				}
+				function shoppingCart()
+				{
+				
+				
+				}
+
+			</script>
+		</div>	
+		<div id="nav" class="Bot">
+			<button id='backButton' type="button" align="bottom" onclick='previousPage()' disabled='true'>Back</button>
+			<button id='nextButton' type="button" align="bottom" onclick='nextPage()'>Next</button>
+			<button id='addButton' type="button" align="bottom" onclick='addItem()'>Add</button>
+			
+		</div>
+		<div id="right">
+			<p id="addedProcessor"></p>
+			<p id="addedHardDrive"></p>
+			<p id="addedVideoCard"></p>
+			<p id="addedPowerSupply"></p>
+		</div>
+		<div id="right" class="Bot">
+			<p class='price' id='totalPrice'>Total Price: P 0.00 </p>
+		</div>
+
+		
+		<div id="section" class="center" class="img">
+			<img class="imgsz" id="slides" src="processor/(1).jpg" alt="Klematis" >
+			
+		</div>
+
+		<div id="footer">
+			CWP 111 Project; Developed By: Gen Librea, Monalisa Lo, Christian Dave Mendoza, Ren Placido, John Christian De Castro
+			
+		</div>
+
+	</body>
+</html>

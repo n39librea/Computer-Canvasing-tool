@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Keyboard</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="keyboard" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="k1">A4Tech KRS-83 PS/2 Black Keyboard</option>
+					<option value="k2">Logitech K120 USB Black Keyboard</option>
+					<option value="k3">Genius KB110 USB Black Keyboard</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('keyboard');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "k1"){
+					document.write("<b>Name: </b>" + keyboard1.name + "</br></br>");
+					document.write("<b>Model: </b>" + keyboard1.model + "</br></br>");
+					document.write("<b>Interface: </b>" + keyboard1.type + "</br></br>");
+					document.write("<b>Backlit: </b>" + keyboard1.backlit + "</br></br>");
+					document.write("<b>Wireless: </b>" + keyboard1.wireless + "</br></br>");
+					document.write("<b>Numpad: </b>" + keyboard1.numpad + "</br></br>");
+					document.write("<b>Multimedia Keys: </b>" + keyboard1.mmkeys + "</br></br>");
+					document.write("<b>Price: </b>P" + keyboard1.price + "</br></br>");
+				}
+				
+				else if(sItem === "k2"){
+					document.write("<b>Name: </b>" + keyboard2.name + "</br></br>");
+					document.write("<b>Model: </b>" + keyboard2.model + "</br></br>");
+					document.write("<b>Interface: </b>" + keyboard2.type + "</br></br>");
+					document.write("<b>Backlit: </b>" + keyboard2.backlit + "</br></br>");
+					document.write("<b>Wireless: </b>" + keyboard2.wireless + "</br></br>");
+					document.write("<b>Numpad: </b>" + keyboard2.numpad + "</br></br>");
+					document.write("<b>Multimedia Keys: </b>" + keyboard2.mmkeys + "</br></br>");
+					document.write("<b>Price: </b>P" + keyboard2.price + "</br></br>");
+				}
+				
+				else if(sItem === "k3"){
+					document.write("<b>Name: </b>" + keyboard3.name + "</br></br>");
+					document.write("<b>Model: </b>" + keyboard3.model + "</br></br>");
+					document.write("<b>Interface: </b>" + keyboard3.type + "</br></br>");
+					document.write("<b>Backlit: </b>" + keyboard3.backlit + "</br></br>");
+					document.write("<b>Wireless: </b>" + keyboard3.wireless + "</br></br>");
+					document.write("<b>Numpad: </b>" + keyboard3.numpad + "</br></br>");
+					document.write("<b>Multimedia Keys: </b>" + keyboard3.mmkeys + "</br></br>");
+					document.write("<b>Price: </b>P" + keyboard3.price + "</br></br>");
+				}
+			}
+		</script>
+	</body>
+</html>

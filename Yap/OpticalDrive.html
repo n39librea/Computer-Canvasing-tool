@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Optical Drive</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="opticaldrive" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="od1">Samsung 22X SH-S223 SATA</option>
+					<option value="od2">LITEON IHAS-124 24X SATA Black</option>
+					<option value="od3">LG GH24NS90 24X SATA Black</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('opticaldrive');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "od1"){
+					document.write("<b>Name: </b>" + opticalDrive1.name + "</br></br>");
+					document.write("<b>Model: </b>" + opticalDrive1.model + "</br></br>");
+					document.write("<b>Write Speed: </b></br>" + opticalDrive1.writespeed + "</br></br>");
+					document.write("<b>Read Speed: </b></br>" + opticalDrive1.readspeed + "</br></br>");
+					document.write("<b>Interface: </b>" + opticalDrive1.type + "</br></br>");
+					document.write("<b>Features: </b></br>" + opticalDrive1.features + "</br></br>");
+					document.write("<b>Price: </b>P" + opticalDrive1.price + "</br></br>");
+				}
+				
+				else if(sItem === "od2"){
+					document.write("<b>Name: </b>" + opticalDrive2.name + "</br></br>");
+					document.write("<b>Model: </b>" + opticalDrive2.model + "</br></br>");
+					document.write("<b>Write Speed: </b></br>" + opticalDrive2.writespeed + "</br></br>");
+					document.write("<b>Read Speed: </b></br>" + opticalDrive2.readspeed + "</br></br>");
+					document.write("<b>Interface: </b>" + opticalDrive2.type + "</br></br>");
+					document.write("<b>Features: </b></br>" + opticalDrive2.features + "</br></br>");
+					document.write("<b>Price: </b>P" + opticalDrive2.price + "</br></br>");
+				}
+				
+				else if(sItem === "od3"){
+					document.write("<b>Name: </b>" + opticalDrive3.name + "</br></br>");
+					document.write("<b>Model: </b>" + opticalDrive3.model + "</br></br>");
+					document.write("<b>Write Speed: </b></br>" + opticalDrive3.writespeed + "</br></br>");
+					document.write("<b>Read Speed: </b></br>" + opticalDrive3.readspeed + "</br></br>");
+					document.write("<b>Interface: </b>" + opticalDrive3.type + "</br></br>");
+					document.write("<b>Features: </b></br>" + opticalDrive3.features + "</br></br>");
+					document.write("<b>Price: </b>P" + opticalDrive3.price + "</br></br>");
+				}
+			}
+		</script>
+	</body>
+</html>

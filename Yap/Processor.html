@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Processor</title>
+	</head>
+	
+	<body>
+	<script type="text/javascript"></script>
+		<div align="center">
+			<form>
+				<select id="processor" onChange="Select()">
+					<option>Select an option...</option>
+					<option value="p1">Intel Core i7-4770K Processor</option>
+					<option value="p2">Intel Core i5-4670K Processor</option>
+					<option value="p3">Intel Core i3-4130 Processor</option>
+				</select>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="HwSpecifications.js"></script>
+		<script type="text/javascript">
+			function Select(){
+				var item = document.getElementById('processor');
+				var sItem = item.options[item.selectedIndex].value;
+				
+				if(sItem === "p1"){
+					document.write("<b>Name: </b>" + processor1.name + "</br>");
+					document.write("<b>Model: </b>" + processor1.model + "</br>");
+					document.write("<b>No. of Core: </b>" + processor1.core + "</br>");
+					document.write("<b>No. of Thread: </b>" + processor1.thread + "</br>");
+					document.write("<b>Clockspeed Rate: </b>" + processor1.clockspd + "</br>");
+					document.write("<b>Max. Frequency: </b>" + processor1.maxfreq + "</br>");
+					document.write("<b>Price: </b>P" + processor1.price + "</br>");
+				}
+				
+				else if(sItem === "p2"){
+					document.write("<b>Name: </b>" + processor2.name + "</br>");
+					document.write("<b>Model: </b>" + processor2.model + "</br>");
+					document.write("<b>No. of Core: </b>" + processor2.core + "</br>");
+					document.write("<b>No. of Thread: </b>" + processor2.thread + "</br>");
+					document.write("<b>Clockspeed Rate: </b>" + processor2.clockspd + "</br>");
+					document.write("<b>Max. Frequency: </b>" + processor2.maxfreq + "</br>");
+					document.write("<b>Price: </b>P" + processor2.price + "</br>");
+				}
+				
+				else if(sItem === "p3"){
+					document.write("<b>Name: </b>" + processor3.name + "</br>");
+					document.write("<b>Model: </b>" + processor3.model + "</br>");
+					document.write("<b>No. of Core: </b>" + processor3.core + "</br>");
+					document.write("<b>No. of Thread: </b>" + processor3.thread + "</br>");
+					document.write("<b>Clockspeed Rate: </b>" + processor3.clockspd + "</br>");
+					document.write("<b>Max. Frequency: </b>" + processor3.maxfreq + "</br>");
+					document.write("<b>Price: </b>P" + processor3.price + "</br>");
+				}
+			}
+		</script>
+	</body>
+</html>
